@@ -126,7 +126,7 @@ HRESULT PlayLiveSource(int nSelVidDevice, int nSelVidDeviceLine, int nSelFormat)
 	g_cpLive->DeviceClose();
 	g_cpLive = NULL;
 
-	return S_OK;
+	return S_OK; // checking git.
 }
 
 int main()
