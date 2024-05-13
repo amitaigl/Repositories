@@ -27,7 +27,7 @@ using namespace std;
 
 CComPtr<IMFDevice> g_cpLive;      //IMFDevice pointer
 
-int EnumAndSelectVideoDevice(int nSelDevice)
+int EnumAndSelectVideoDevice(int nSelDevice) // clean the argument!
 {
 	HRESULT hr = S_OK;
 	CComBSTR cbsDevName;
@@ -74,7 +74,7 @@ int EnumAndSelectVideoDevice(int nSelDevice)
 	return nLiveDevice;
 }
 
-HRESULT PlayLiveSource(int nSelVidDevice, int nSelVidDeviceLine, int nSelFormat)
+HRESULT PlayLiveSource(int nSelVidDevice, int nSelVidDeviceLine, int nSelFormat) // clean the arguments!!!
 {
 	// Create MFLive instance
 	HRESULT hr = g_cpLive.CoCreateInstance(__uuidof(MFLive));
