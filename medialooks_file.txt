@@ -1,0 +1,4 @@
+In CMD:
+
+cd C:\Program Files (x86)\Medialooks\MFormats SDK\Samples\C++\Sample File Playback Console\Debug\x64
+SampleFilePlaybackConsole.exe C:\Users\amita\Downloads\20240502_090008.mp4

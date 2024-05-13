@@ -1,0 +1,3 @@
+C:\lib\install\opencv\include
+$(OPENCV_DIR)\lib
+opencv_world490.lib
