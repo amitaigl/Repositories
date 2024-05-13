@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{9dcd9a15-f936-4ad9-b3a4-fd79803d8363}</ProjectGuid>
-    <RootNamespace>MedialooksFile</RootNamespace>
+    <ProjectGuid>{953eaba8-064d-4d31-92fe-7b6046d686a4}</ProjectGuid>
+    <RootNamespace>MedialooksLive</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -127,10 +127,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="medialooks_file.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="MFormats.h" />
+    <ClCompile Include="medialooks_live.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
