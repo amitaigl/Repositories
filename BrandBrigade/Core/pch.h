@@ -10,4 +10,9 @@
 // add headers that you want to pre-compile here
 #include "framework.h"
 
+#include <string>
+
+__declspec(dllexport)
+int open(int a);
+
 #endif //PCH_H

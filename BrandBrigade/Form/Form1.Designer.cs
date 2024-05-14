@@ -32,6 +32,7 @@
             button2 = new Button();
             button3 = new Button();
             pictureBox1 = new PictureBox();
+            openFileDialog1 = new OpenFileDialog();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -77,6 +78,12 @@
             pictureBox1.TabIndex = 3;
             pictureBox1.TabStop = false;
             // 
+            // openFileDialog1
+            // 
+            openFileDialog1.FileName = "openFileDialog1";
+            openFileDialog1.Title = "Open Video File";
+            openFileDialog1.FileOk += openFileDialog1_FileOk;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(9F, 21F);
@@ -99,5 +106,6 @@
         private Button button2;
         private Button button3;
         private PictureBox pictureBox1;
+        private OpenFileDialog openFileDialog1 = new OpenFileDialog();
     }
 }

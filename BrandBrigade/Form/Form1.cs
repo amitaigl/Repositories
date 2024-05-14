@@ -1,7 +1,11 @@
+using System.Windows.Forms;
+//using Bridge; // Assuming reference to C++/CLI project
+
 namespace AppForm
 {
     public partial class Form1 : Form
     {
+        //private MyCppCliWrapper wrapper = new MyCppCliWrapper(); // !!!!!!!!!!!!!
         public Form1()
         {
             InitializeComponent();
@@ -14,7 +18,15 @@ namespace AppForm
 
         private void button2_Click(object sender, EventArgs e)
         {
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                // Get the selected file path
+                string filePath = openFileDialog1.FileName;
 
+                // Process the selected file (e.g., read its contents)
+                // ...
+                //wrapper.OpenFile(filePath); // Call C++/CLI function
+            }
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -66,6 +78,11 @@ namespace AppForm
                 MessageBox.Show("Failed to open video file.");
             }
             */
+        }
+
+        private void openFileDialog1_FileOk(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+
         }
     }
 }
