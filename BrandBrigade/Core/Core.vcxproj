@@ -139,17 +139,35 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="includes.hpp" />
+    <ClInclude Include="initializing.hpp" />
+    <ClInclude Include="devices.hpp" />
+    <ClInclude Include="file.hpp" />
+    <ClInclude Include="frames.hpp" />
     <ClInclude Include="framework.h" />
+    <ClInclude Include="live.hpp" />
+    <ClInclude Include="MFormats.h" />
     <ClInclude Include="pch.h" />
+    <ClInclude Include="reading.hpp" />
+    <ClInclude Include="showing.hpp" />
+    <ClInclude Include="sources.hpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="initializing.cpp" />
+    <ClCompile Include="devices.cpp" />
     <ClCompile Include="dllmain.cpp" />
+    <ClCompile Include="file.cpp" />
+    <ClCompile Include="frames.cpp" />
+    <ClCompile Include="live.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="reading.cpp" />
+    <ClCompile Include="showing.cpp" />
+    <ClCompile Include="sources.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

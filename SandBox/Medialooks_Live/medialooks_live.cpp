@@ -44,6 +44,7 @@ int EnumAndSelectVideoDevice(int nSelDevice) // clean the argument!
 	}*/
 
 	//Video device number wasn't specified as argument or number was incorrect
+	
 	//Enumerate devices
 	int nCount = 0;
 	hr = g_cpLive->DeviceGetCount(eMFDT_Video, &nCount);
@@ -53,6 +54,7 @@ int EnumAndSelectVideoDevice(int nSelDevice) // clean the argument!
 		return 0;
 	}
 
+	//Print devices:
 	_tprintf(_T("Supported video devices:\n\n"));
 	for (int i = 0; i < nCount; i++)
 	{
@@ -71,10 +73,10 @@ int EnumAndSelectVideoDevice(int nSelDevice) // clean the argument!
 		_tprintf(_T("ERROR: Can't use this input device for capturing \n"));
 		return 0;
 	}
-	return nLiveDevice;
+	return nLiveDevice; //                       <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<    !!!
 }
 
-HRESULT PlayLiveSource(int nSelVidDevice, int nSelVidDeviceLine, int nSelFormat) // clean the arguments!!!
+HRESULT PlayLiveSource(int nSelVidDevice, int nSelVidDeviceLine, int nSelFormat)
 {
 	// Create MFLive instance
 	HRESULT hr = g_cpLive.CoCreateInstance(__uuidof(MFLive));
@@ -99,8 +101,6 @@ HRESULT PlayLiveSource(int nSelVidDevice, int nSelVidDeviceLine, int nSelFormat)
 	int nVidDevice = EnumAndSelectVideoDevice(nSelVidDevice);
 	if (nVidDevice == 0)
 		return E_FAIL;  //No valid video device was selected
-
-	/*Format func??*/
 
 	_tprintf(_T("Capturing...  Press ESC to stop capturing from the device\n"));
 	CComPtr<IMFFrame> cpFrame;
@@ -143,7 +143,7 @@ int main()
 
 
 
-	PlayLiveSource(0, 0, 0); //*** I need clean the arguments here!!
+	PlayLiveSource(0, 0, 0);
 
 	::CoUninitialize();
 	return 0;

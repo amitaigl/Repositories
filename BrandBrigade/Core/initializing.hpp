@@ -3,13 +3,11 @@
 namespace BrandBrigade
 {
 
-class Frame
+class Init
 {
 public:
-	Frame();
-
-private:
-	CComPtr<IMFFrame> cpFrame;
+	Init();
+	~Init();
 };
 
 } // BrandBrigade

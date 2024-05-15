@@ -3,13 +3,13 @@
 namespace BrandBrigade
 {
 
-class Frame
+class Source
 {
 public:
-	Frame();
-
+	Source(CComPtr<IMFDevice> g_cpLive);
 private:
-	CComPtr<IMFFrame> cpFrame;
+	CComQIPtr<IMFSource> cpSource;
+
 };
 
 } // BrandBrigade
