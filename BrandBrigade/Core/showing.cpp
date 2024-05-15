@@ -1,4 +1,3 @@
-#include "pch.h"
 #include "showing.hpp"
 
 namespace BrandBrigade

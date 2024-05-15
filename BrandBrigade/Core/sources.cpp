@@ -1,4 +1,3 @@
-#include "pch.h"
 #include "sources.hpp"
 
 namespace BrandBrigade

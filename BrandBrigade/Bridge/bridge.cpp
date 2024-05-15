@@ -9,6 +9,9 @@
 //extern "C" __declspec(dllimport) int open(int a);
 //__declspec(dllimport) int open(int a);
 
+namespace BrandBrigade
+{
+
 public ref class Amitai
 {
 public:
@@ -22,6 +25,8 @@ public:
         return 0;
     }
 };
+
+}
 
 
 /*using namespace std;
