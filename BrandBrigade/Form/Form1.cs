@@ -2,6 +2,7 @@ using System.Windows.Forms;
 //using Bridge; // Assuming reference to C++/CLI project
 //using System;
 
+using System;
 using BrandBrigade;
 
 namespace AppForm
@@ -16,7 +17,7 @@ namespace AppForm
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //Amitai();
+            ManagedObject obj = new ManagedObject();
         }
 
         private void button2_Click(object sender, EventArgs e)

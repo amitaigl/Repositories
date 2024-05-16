@@ -3,7 +3,7 @@
 namespace BrandBrigade
 {
 
-class Init
+class __declspec(dllexport) Init
 {
 public:
 	Init();

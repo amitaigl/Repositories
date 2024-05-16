@@ -18,11 +18,4 @@
 #include "rpc.h"
 #include "rpcndr.h"
 
-
-
-#include <string>
-
-__declspec(dllexport)
-int open(int a);
-
 #endif //PCH_H

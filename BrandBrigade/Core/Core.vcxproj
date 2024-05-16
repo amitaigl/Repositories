@@ -139,6 +139,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Core.h" />
     <ClInclude Include="includes.hpp" />
     <ClInclude Include="initializing.hpp" />
     <ClInclude Include="devices.hpp" />
