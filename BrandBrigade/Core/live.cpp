@@ -1,20 +1,11 @@
 #include "live.hpp"
+#include "opencv2/opencv.hpp"
 
 namespace BrandBrigade
 {
 
-Live::Live() : m_source(m_device.GetPtr())
+Live::Live() : m_starter(), m_frame()
 {
-	HRESULT hr = S_OK;
-
-	hr = CoInitializeEx(NULL, COINIT_MULTITHREADED);
-	if(FAILED(hr))
-	{
-		/*_tprintf(_T("ERROR: Can't initialize COM \n"));
-		return 0;*/
-		cout << "ERROR: Can't initialize COM\n";
-	}
-
 	Run();
 }
 
@@ -26,22 +17,32 @@ Live::~Live()
 void Live::Run()
 {
 	//_tprintf(_T("Capturing...  Press ESC to stop capturing from the device\n"));
-	cout << "Capturing...  Press ESC to stop capturing from the device" << endl;
+	//cout << "Capturing...  Press ESC to stop capturing from the device" << endl;
+	CComPtr<IMFFrame> cpFrame = NULL;
+	M_AV_PROPS avProps = {};
+	// temp:
+	Mat frame = Mat::zeros(Size(300, 300), CV_8UC3);
 
-	//while(GetAsyncKeyState(VK_ESCAPE) == 0)
-	//{
-	//	cpFrame = NULL;
-	//	//Get frames one by one 
-	//	hr = cpSource->SourceFrameConvertedGet(&avProps, -1, &cpFrame, CComBSTR(L""));
-	//	if (cpFrame)
-	//	{
-	//		//Send frame to preview
-	//		if (cpReceiverPreview)
-	//			hr = cpReceiverPreview->ReceiverFramePut(cpFrame, -1, CComBSTR(L""));
-	//		if (FAILED(hr))
-	//			break;
-	//	}
-	//}
+
+	namedWindow("Video Window", WINDOW_AUTOSIZE);
+
+
+	while(GetAsyncKeyState(VK_ESCAPE) == 0)
+	{
+		cpFrame = NULL;
+		//Get frames one by one 
+		HRESULT hr = m_frame.GetSource().GetSource()->SourceFrameConvertedGet(&avProps, -1, &cpFrame, CComBSTR(L""));
+		//if (cpFrame)
+		//{
+		//	//Send frame to preview
+		//	if (cpReceiverPreview)
+		//		hr = cpReceiverPreview->ReceiverFramePut(cpFrame, -1, CComBSTR(L""));
+		//	if (FAILED(hr))
+		//		break;
+		//}
+		imshow("Video Window", frame);
+
+	}
 }
 
 } // BrandBrigade

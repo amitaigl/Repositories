@@ -9,14 +9,18 @@ namespace BrandBrigade
     public ref class ManagedObject
     {
     public:
-        ManagedObject() : m_Instance(new Live) {}
+        //ManagedObject() : m_Instance(new Live) {}
+        ManagedObject() : m_Instance(NULL)
+        {
+            m_Instance = new Live();
+        }
 
         virtual ~ManagedObject()
         {
-            /*if (m_Instance != nullptr)
-            {*/
+            if (m_Instance != nullptr)
+            {
                 delete m_Instance;
-            //}
+            }
         }
 
         void Run()

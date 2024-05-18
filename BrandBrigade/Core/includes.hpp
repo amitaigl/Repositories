@@ -6,6 +6,7 @@
 #include <atlstr.h>
 #include <iostream>
 
+
 //#define _ATL_CSTRING_EXPLICIT_CONSTRUCTORS//???????????
 
 

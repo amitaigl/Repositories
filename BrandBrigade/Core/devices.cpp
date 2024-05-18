@@ -3,7 +3,7 @@
 namespace BrandBrigade
 {
 
-Device::Device()
+Device::Device() : g_cpLive(NULL)
 {
 	CreateInstance();
 
@@ -26,8 +26,6 @@ void Device::CreateInstance()
 	hr = g_cpLive.CoCreateInstance(__uuidof(MFLive));
 	if(FAILED(hr))
 	{
-		//_tprintf(_T("ERROR: Can't create MFLive instance \n"));
-		//return E_FAIL;
 		throw("ERROR: Can't create MFLive instance\n");
 	}
 }
@@ -52,7 +50,6 @@ void Device::DisplayDevices()
 	for(int i = 0; i < nCount; i++)
 	{
 		g_cpLive->DeviceGetByIndex(eMFDT_Video, i, &cbsDevName, &bBusy);
-		//_tprintf(_T("%i: %s\n"), i + 1, cbsDevName);
 		cout << i + 1 << ": " << cbsDevName << endl;
 	}
 }
@@ -70,8 +67,6 @@ void Device::EnumerateDevices(int& nCount)
 
 void Device::SelectDevice()
 {
-	/*_tprintf(_T("\n"));
-	_tprintf(_T("Choose video device index:\n"));*/
 	cout << "\nChoose video device index:\n";
 
 	int nLiveDevice = 0;
