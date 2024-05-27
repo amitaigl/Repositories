@@ -36,12 +36,6 @@
     <ClInclude Include="file.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="reading.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="showing.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="initializing.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -72,12 +66,6 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="file.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="reading.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="showing.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="initializing.cpp">

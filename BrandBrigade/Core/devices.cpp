@@ -69,8 +69,8 @@ void Device::SelectDevice()
 {
 	cout << "\nChoose video device index:\n";
 
-	int nLiveDevice = 0;
-	cin >> nLiveDevice;
+	int nLiveDevice = 6; // now this is "6" becouse i want to get mi Logitech camera.
+	//cin >> nLiveDevice;
 
 	HRESULT hr = S_OK;
 	hr = g_cpLive->DeviceSet(eMFDT_Video, nLiveDevice - 1, CComBSTR(L""));

@@ -18,9 +18,10 @@ public:
 	Frame();
 	~Frame();
 
-	void PutFrame();
-	Mat& GetFrame();
-	Source& GetSource();
+	HRESULT PutFrame();
+	//CComPtr<IMFFrame>& GetMedialooksFrame();
+	Mat& GetOpencvFrame();
+	//Source& GetSource();
 
 private:
 	void Convert();
@@ -29,7 +30,7 @@ private:
 	Source m_source;
 	//CComPtr<IMPreview> cpPreview; // change name to "m_shower"
 	CComPtr<IMFFrame> cpFrame;
-	Mat& m_frame;
+	Mat& m_opencvFrame;
 };
 
 } // BrandBrigade

@@ -12,26 +12,31 @@ Live::Live() : m_starter(), m_frame()
 Live::~Live()
 {
 	::CoUninitialize();
+	destroyAllWindows();
 }
 
 void Live::Run()
 {
 	//_tprintf(_T("Capturing...  Press ESC to stop capturing from the device\n"));
 	//cout << "Capturing...  Press ESC to stop capturing from the device" << endl;
-	CComPtr<IMFFrame> cpFrame = NULL;
-	M_AV_PROPS avProps = {};
+	//CComPtr<IMFFrame> cpFrame = NULL;
 	// temp:
-	Mat frame = Mat::zeros(Size(300, 300), CV_8UC3);
-
+	//Mat frame = Mat::zeros(Size(300, 300), CV_8UC3);
+	Mat frame;
+	//VideoCapture cap;
 
 	namedWindow("Video Window", WINDOW_AUTOSIZE);
 
 
 	while(GetAsyncKeyState(VK_ESCAPE) == 0)
 	{
-		cpFrame = NULL;
-		//Get frames one by one 
-		HRESULT hr = m_frame.GetSource().GetSource()->SourceFrameConvertedGet(&avProps, -1, &cpFrame, CComBSTR(L""));
+		//Get frames one by one
+		HRESULT hr = m_frame.PutFrame();
+		if (hr != S_OK)
+		{
+			break;
+		}
+		//frame = m_frame.GetOpencvFrame();
 		//if (cpFrame)
 		//{
 		//	//Send frame to preview
@@ -40,7 +45,8 @@ void Live::Run()
 		//	if (FAILED(hr))
 		//		break;
 		//}
-		imshow("Video Window", frame);
+		//imshow("Video Window", frame);
+		imshow("Video Window", m_frame.GetOpencvFrame());
 
 	}
 }

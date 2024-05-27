@@ -12,7 +12,7 @@ namespace BrandBrigade
         //ManagedObject() : m_Instance(new Live) {}
         ManagedObject() : m_Instance(NULL)
         {
-            m_Instance = new Live();
+            m_Instance = new Live(); // strange!!
         }
 
         virtual ~ManagedObject()
@@ -23,10 +23,12 @@ namespace BrandBrigade
             }
         }
 
+        // delete this func?
         void Run()
         {
             m_Instance->Run();
         }
+
     protected:
     //private:
         Live* m_Instance;
